@@ -1,0 +1,28 @@
+---
+interface Props {
+  text: string;
+  name: string;
+  role: string;
+  image?: string;
+}
+const { text, name, role, image } = Astro.props;
+// Prendre la première lettre du prénom (avant espace)
+const initial = name && name.trim().length > 0 ? name.trim().split(' ')[0][0].toUpperCase() : '?';
+---
+<div class="bg-white rounded-2xl shadow p-6 flex flex-col gap-4">
+  <p class="text-slate-900 text-base">{text}</p>
+  <div class="flex items-center gap-3 mt-2">
+    {image && (
+      <img src={image} alt={name} class="w-8 h-8 rounded-full object-cover border border-slate-200" />
+    )}
+    {!image && (
+      <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center border border-slate-200">
+        {initial}
+      </div>
+    )}
+    <div>
+      <div class="font-semibold text-slate-900 text-sm">{name || 'Anonyme'}</div>
+      <div class="text-xs text-slate-400">{role}</div>
+    </div>
+  </div>
+</div> 
