@@ -23,8 +23,32 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 			<img src="/ellipse1.svg" alt="" class="absolute left-0 top-[30px] -translate-y-1/2 -translate-x-1/2 w-[200px] sm:w-[300px] lg:w-[400px] h-auto" />
 			<img src="/ellipse2.svg" alt="" class="absolute right-[10vw] top-12 -translate-y-1/2 translate-x-1/2 w-[200px] sm:w-[300px] lg:w-[400px] h-auto rotate-90" />
 			<img src="/ellipse3.svg" alt="" class="absolute bottom-[70px] right-4 sm:right-8 translate-x-1/2 translate-y-1/2 w-[200px] sm:w-[300px] lg:w-[400px] h-auto" />
-			<div class="flex flex-col lg:flex-row items-center justify-center relative z-10 w-full max-w-7xl h-full gap-8 lg:gap-24">
-				<div class="max-w-3xl w-full flex-1 order-1 lg:order-1 text-center lg:text-left mx-auto">
+			
+			<!-- Version Mobile -->
+			<div class="flex flex-col items-center justify-center relative z-10 w-full max-w-7xl h-full gap-8 lg:hidden">
+				<div class="max-w-3xl w-full flex-1 flex flex-col justify-center text-center mx-auto">
+					<div class="pb-8 sm:pb-16 flex justify-center">
+						<img src="/logo-ritmoaudit.svg" alt="Ritmo Audit" class="h-8 w-auto" />
+					</div>
+					<div class="mb-4 sm:mb-6 border-b pb-3">
+						<p class="text-slate-400 text-xs sm:text-base">Bureau d'étude certifié RGE | Audit énergétique | PPT | DPE Collectif | DTG</p>
+					</div>
+					<h1 class="text-[1.8rem] !leading-[2.4rem] sm:text-4xl font-bold mb-4 sm:mb-6">Des audits énergétiques<br>précis par des experts qualifiés<br>pour améliorer les performances<br>de vos bâtiments.</h1>
+					<div class="flex flex-row justify-center items-center gap-2 w-full mb-4">
+						<div class="w-1/4"><Member image="/didierp.png" name="Didier" role="Référent thermicien et auditeur" /></div>
+						<div class="w-1/4"><Member image="/anton.png" name="Antonin" role="Auditeur et diagnositqueur" /></div>
+						<div class="w-1/4"><Member image="/thom.png" name="Thomas" role="Président et conseiller technique" /></div>
+						<div class="w-1/4"><Member image="/hufo.png" name="Hugo" role="Conseiller technique" /></div>
+					</div>
+					<div>
+						<a href="#contact"><Button variant="primary" size="md">Demandez votre devis</Button></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Version Desktop -->
+			<div class="hidden lg:flex flex-row items-center justify-center relative z-10 w-full max-w-7xl h-full gap-24">
+				<div class="max-w-3xl w-full flex-1 text-left">
 					<div class="pb-8 sm:pb-16">
 						<img src="/logo-ritmoaudit.svg" alt="Ritmo Audit" class="h-8 w-auto" />
 					</div>
@@ -33,14 +57,14 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 					</div>
 					<h1 class="text-2xl !leading-[2.8rem] sm:text-4xl font-bold mb-4 sm:mb-6">Des audits énergétiques<br>précis par des experts qualifiés<br>pour améliorer les performances<br>de vos bâtiments.</h1>
 					<div>
-						<Button variant="primary" size="md">Demandez votre devis</Button>
+						<a href="#contact"><Button variant="primary" size="md">Demandez votre devis</Button></a>
 					</div>
 				</div>
-				<div class="flex flex-wrap lg:flex-row justify-center items-center gap-x-2 sm:gap-x-4 lg:gap-x-4 w-full max-w-xl flex-shrink-0 order-2 lg:order-2">
+				<div class="flex flex-wrap lg:flex-row justify-center items-center gap-x-4 w-full max-w-xl">
 					<div class="lg:mt-0"><Member image="/didierp.png" name="Didier" role="Référent thermicien et auditeur" /></div>
 					<div class="lg:mt-12"><Member image="/anton.png" name="Antonin" role="Auditeur et diagnositqueur" /></div>
 					<div class="lg:mt-0"><Member image="/thom.png" name="Thomas" role="Président et conseiller technique" /></div>
-					<div class="lg:mt-12"><Member image="/thom.png" name="Hugo" role="Conseiller technique" /></div>
+					<div class="lg:mt-12"><Member image="/hufo.png" name="Hugo" role="Conseiller technique" /></div>
 				</div>
 			</div>
 		</div>
@@ -52,12 +76,12 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 			</div>
 			<div>
 				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-2 sm:px-8">
-					<PrestationCard title="Audit Énergétique Réglementaire" description="Vous avez besoin d'un audit énergétique réglementaire pour la vente de votre maison ou de votre immeuble en monopropriété ?" icon="/Maison.svg" />
-					<PrestationCard title="Audit Énergétique Rénovation" description="Vous avez besoin d'un audit énergétique réglementaire pour la vente de votre maison ou de votre immeuble en monopropriété ?" icon="/maison-2.svg" />
-					<PrestationCard title="Audit Énergétique Copropriété" description="Vous avez besoin d'un audit énergétique réglementaire pour la vente de votre maison ou de votre immeuble en monopropriété ?" icon="/Copro.svg" />
-					<PrestationCard title="Plan Pluriannuel de travaux (PPT)" description="Vous avez besoin d'un audit énergétique réglementaire pour la vente de votre maison ou de votre immeuble en monopropriété ?" icon="/Immeuble.svg" />
-					<PrestationCard title="DTG de Copropriété" description="Vous avez besoin d'un audit énergétique réglementaire pour la vente de votre maison ou de votre immeuble en monopropriété ?" icon="/Copro-3.svg" />
-					<PrestationCard title="DPE Collectif" description="Vous avez besoin d'un audit énergétique réglementaire pour la vente de votre maison ou de votre immeuble en monopropriété ?" icon="/Copro-3-1.svg" />
+					<PrestationCard title="Audit Énergétique Avant-Vente" description="Vous avez besoin d'un audit énergétique réglementaire pour la vente de votre maison ou de votre immeuble en monopropriété ?" icon="/Maison.svg" />
+					<PrestationCard title="Audit Énergétique Rénovation" description="Vous planifiez des travaux de rénovation énergétique pour améliorer le confort et réduire vos factures ? Notre audit énergétique vous guide dans vos choix d'investissement." icon="/maison-2.svg" />
+					<PrestationCard title="Audit Énergétique Copropriété" description="Votre copropriété doit réaliser un audit énergétique réglementaire ou souhaite engager une démarche de rénovation énergétique collective ? Nous accompagnons les syndics et conseils syndicaux dans cette démarche." icon="/Copro.svg" />
+					<PrestationCard title="Plan Pluriannuel de travaux (PPT)" description="Votre copropriété doit établir son plan pluriannuel de travaux obligatoire ? Nous vous accompagnons dans l'élaboration de cette feuille de route pour anticiper et budgétiser vos travaux." icon="/Immeuble.svg" />
+					<PrestationCard title="DTG de Copropriété" description="Votre copropriété nécessite un Diagnostic Technique Global pour évaluer l'état général de votre bâtiment ? Nous réalisons cette expertise complète obligatoire pour les copropriétés en difficulté ou de plus de 10 ans." icon="/Copro-3.svg" />
+					<PrestationCard title="DPE Collectif" description="Votre copropriété doit établir son Diagnostic de Performance Énergétique collectif ? Nous réalisons cette évaluation énergétique obligatoire qui détermine la classe énergétique de votre immeuble et identifie les pistes d'amélioration." icon="/Copro-3-1.svg" />
 				</div>
 			</div>
 		</div>
@@ -112,14 +136,14 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 		</div>
 
 		<!-- SECTION PROJET (MESSENGER) -->
-		<div class="py-8 sm:py-12 px-2 sm:px-[7%]">
+		<div id="contact" class="py-8 sm:py-12 px-2 sm:px-[7%]">
 			<div class="bg-slate-50 p-4 sm:p-8 md:p-16 lg:p-24 rounded-xl flex flex-col items-center relative overflow-hidden">
 				<img src="/ellipse1.svg" alt="" class="absolute left-0 top-4 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[500px] lg:h-[500px]" />
 				<img src="/ellipse2.svg" alt="" class="absolute right-0 top-16 translate-x-1/2 -translate-y-1/2 w-[120px] h-[120px] sm:w-[200px] sm:h-[200px] lg:w-[300px] lg:h-[300px] rotate-90" />
 				<img src="/ellipse3.svg" alt="" class="absolute bottom-8 right-4 translate-x-1/2 translate-y-1/2 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[500px] lg:h-[500px]" />
 				<h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center">👋 On prépare votre projet ?</h2>
 				<div class="py-4 sm:py-6 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 w-full">
-					<img src="/thom.png" alt="Envoyer un mail" class="h-20 w-20 sm:h-24 sm:w-24 bg-white rounded-full shadow object-cover mb-4 sm:mb-0" />
+					<img src="/hufo.png" alt="Envoyer un mail" class="h-20 w-20 sm:h-24 sm:w-24 bg-white rounded-full shadow object-cover mb-4 sm:mb-0" />
 					<div class="relative w-full sm:w-auto">
 						<div class="bg-white rounded-2xl shadow px-4 py-3 sm:px-6 sm:py-4 text-slate-700 text-base sm:text-lg max-w-full sm:max-w-md text-left">
 							Bonjour ! Je me présente, Hugo BELLIARD. Je suis conseiller technique pour RITMOAudit et à votre service. Vous avez un projet ou une question ? Contactez-nous, nous sommes à votre disposition pour vous aider.
@@ -129,7 +153,7 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 				</div>
 				<div class="flex flex-col sm:flex-row gap-4 mt-6 w-full justify-center items-center">
 					<a href="tel:+33231156488" class="px-4 py-2 rounded-full font-semibold text-sm bg-white shadow hover:text-white hover:bg-[#3e7e5e] transition w-full sm:w-auto text-center">📞 02 31 15 64 88</a>
-					<a href="mailto:contact@ritmoaudit.fr" class="px-4 py-2 rounded-full bg-white font-semibold text-sm shadow hover:bg-slate-300 transition w-full sm:w-auto text-center">✉️ Nous écrire par email</a>
+					<a href="mailto:contact@ritmoaudit.fr" target="_blank" class="px-4 py-2 rounded-full bg-white font-semibold text-sm shadow hover:bg-slate-300 transition w-full sm:w-auto text-center">✉️ Nous écrire par email</a>
 				</div>
 			</div>
 		</div>
@@ -158,17 +182,17 @@ import TestimonialCard from '../components/TestimonialCard.astro';
 						<div>
 							<h3 class="text-xl font-bold">Ressources</h3>
 							<ul  class="text-slate-500 text-sm flex flex-col gap-2 mt-4">
-								<li>Blog</li>
-								<li>LinkedIn</li>
-								<li>RITMODiag</li>
+								<!-- <li>Blog</li> -->
+								<li><a href="https://www.linkedin.com/company/ritmoaudit/">LinkedIn</a></li>
+								<li><a href="https://ritmodiag.com"></a>RITMODiag</li>
 							</ul>
 						</div>
 						<div>
 							<h3 class="text-xl font-bold">À propos</h3>
 							<ul  class="text-slate-500 text-sm flex flex-col gap-2 mt-4">
-								<li>Nous contacter</li>
-								<li>Mentions légales</li>	
-								<li>Politique de confidentialité</li>
+								<li><a href="mailto:contact@ritmoaudit.fr" target="_blank">Nous contacter</a></li>
+								<li><a href="https://ritmodiag.com/mentions-legales/" target="_blank">Mentions légales</a></li>	
+								<li><a href="https://ritmodiag.com/politique-de-confidentialite/" target="_blank">Politique de confidentialité</a></li>
 							</ul>
 						</div>
 					</div>
